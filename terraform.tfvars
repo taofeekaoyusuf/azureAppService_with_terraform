@@ -7,7 +7,7 @@ tenant_id = "f958e84a-92b8-439f-a62d-4f45996b6d07"
 # Resource Group/Location
 location = "South Central US"
 resource_group = "Azuredevops"
-application_type = "app_service" # This name has to be globally unique.
+application_type = "AppService" # This name has to be globally unique.
 
 # Tags
 tier = "Test"
