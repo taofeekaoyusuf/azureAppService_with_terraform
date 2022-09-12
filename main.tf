@@ -1,8 +1,8 @@
 provider "azurerm" {
-  tenant_id       = "${var.tenant_id}"
-  subscription_id = "${var.subscription_id}"
-  client_id       = "${var.client_id}"
-  client_secret   = "${var.client_secret}"
+  tenant_id       = var.tenant_id
+  subscription_id = var.subscription_id
+  client_id       = var.client_id
+  client_secret   = var.client_secret
   features {}
 }
 
@@ -17,24 +17,33 @@ terraform {
 
 locals {
   tags = {
-    tier = "${var.tier}"
+    tier       = "${var.tier}"
     deployment = "${var.deployment}"
   }
 }
 
 module "resource_group" {
-  source               = "./modules/resource_group"
-  resource_group       = "${var.resource_group}"
-  location             = "${var.location}"
+  source         = "./modules/resource_group"
+  resource_group = var.resource_group
+  location       = var.location
 }
 
 # Reference the AppService Module here.
 module "app_service" {
+<<<<<<< HEAD
+  source           = "./modules/appservice"
+  location         = var.location
+  application_type = var.application_type
+  resource_type    = var.resource_type
+  resource_group   = modules.resource_group.resource_group_name
+  tags             = var.tags
+=======
   source = "./modules/appservice"
   location = "${var.location}"
   application_type = "${var.application_type}"
   resource_type = "${var.resource_type}"
-  resource_group = "${modules.resource_group.resource_group_name}"
+  resource_group = "${modules.resource_group.rg.azurerm_resource_group.dev.name}"
   tags = "${var.tags}"
+>>>>>>> efb961f833f996f059164a1009a5bab89e01e62a
 }
 
