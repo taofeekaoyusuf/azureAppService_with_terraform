@@ -11,6 +11,6 @@ variable "application_type" {}
 variable "resource_type" {}
 
 # Tags
-variable tier {}
-variable deployment {}
-variable tags {}
+variable "tier" {}
+variable "deployment" {}
+variable "tags" {}
