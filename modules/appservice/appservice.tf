@@ -1,14 +1,3 @@
-resource "azurerm_app_service_plan" "dev" {
-  name                = "${var.application_type}-${var.resource_type}"
-  location            = "${var.location}"
-  resource_group_name = "${var.resource_group}"
-
-  sku {
-    tier = "Free"
-    size = "F1"
-  }
-}
-
 resource "azurerm_app_service" "dev" {
   name                = "${var.application_type}-${var.resource_type}"
   location            = "${var.location}"
@@ -19,4 +8,15 @@ resource "azurerm_app_service" "dev" {
     "WEBSITE_RUN_FROM_PACKAGE" = 0
   }
   tags = "${var.tags}"
+}
+
+resource "azurerm_app_service_plan" "dev" {
+  name                = "${var.application_type}-${var.resource_type}"
+  location            = "${var.location}"
+  resource_group_name = "${var.resource_group}"
+
+  sku {
+    tier = "Free"
+    size = "F1"
+  }
 }
