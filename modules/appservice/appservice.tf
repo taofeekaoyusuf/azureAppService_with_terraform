@@ -13,7 +13,7 @@ resource "azurerm_app_service" "dev" {
 resource "azurerm_app_service_plan" "dev" {
   name                = "${var.application_type}-${var.resource_type}"
   location            = "${var.location}"
-  resource_group_name = "${var.resource_group}"
+  resource_group_name = azurerm_app_service.dev.resource_group_name
 
   sku {
     tier = "Free"
