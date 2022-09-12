@@ -1,6 +1,6 @@
 #! /bin/bash
 
-### === TERRAFORM === ###
+### === TERRAFORM === ##
 
 echo "\n***### Formating the Terraform files ###***\n"
 sleep 2
