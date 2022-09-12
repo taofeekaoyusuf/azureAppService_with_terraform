@@ -12,7 +12,7 @@ sleep 5
 echo "\n***### Initializing Terraform ###***\n"
 sleep 2
 # Terraform initialization
-terraform init
+terraform init .
 echo "\n***### End of Terraform Initialization ###***\n"
 sleep 5
 
