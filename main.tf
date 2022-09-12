@@ -23,9 +23,9 @@ locals {
 }
 
 module "resource_group" {
-  name  = "Azuredevops"
   source         = "./modules/resource_group"
   resource_group = var.resource_group
+  resource_group_name  = "Azuredevops"
   location       = var.location
 }
 
