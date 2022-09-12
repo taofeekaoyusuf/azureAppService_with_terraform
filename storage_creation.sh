@@ -12,7 +12,7 @@ sleep 2
 # Variable Definition
 RESOURCE_GROUP_NAME="Azuredevops"
 STORAGE_ACCOUNT_NAME="azuredevops$RANDOM" #"Azuredevops$(get-random)"
-CONTAINER_NAME="azuredevops_container"
+CONTAINER_NAME="azuredevopscontainer"
 echo "\n***### Variable definition and Assignment Completed!!! ###***\n"
 sleep 5
 echo "\n"
