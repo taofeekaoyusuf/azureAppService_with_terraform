@@ -10,9 +10,9 @@ sleep 2
 echo "\n***### Initial Variable Definition ###***\n"
 sleep 2
 # Variable Definition
-RESOURCE_GROUP_NAME = 'Azuredevops'
-STORAGE_ACCOUNT_NAME = "Azuredevops$(get-random)"
-CONTAINER_NAME = 'Azuredevops'
+RESOURCE_GROUP_NAME="Azuredevops"
+STORAGE_ACCOUNT_NAME="Azuredevops$(get-random)"
+CONTAINER_NAME="Azuredevops"
 echo "\n***### Variable definition and Assignment Completed!!! ###***\n"
 sleep 5
 
