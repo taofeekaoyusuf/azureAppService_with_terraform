@@ -34,7 +34,7 @@ sleep 5
 echo "\n***### Blob Container Creation Phase ###***\n"
 sleep 2
 # Create blob container
-az storage container create --name $CONTAINER_NAME --account-name $STORAGE_ACCOUNT_NAME
+az storage container create --name $CONTAINER_NAME --account-name $STORAGE_ACCOUNT_NAME  --auth-mode login
 echo "\n***### Blob Container Creation Completed!!! ###***\n"
 sleep 5
 
