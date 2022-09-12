@@ -13,3 +13,4 @@ resource_type = "AppService"
 # Tags
 tier = "Dev"
 deployment = "Terraform"
+tags = "dev"

@@ -13,4 +13,4 @@ variable "resource_type" {}
 # Tags
 variable tier {}
 variable deployment {}
-
+variable tags {}
