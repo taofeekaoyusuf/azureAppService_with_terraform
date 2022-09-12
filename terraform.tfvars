@@ -14,4 +14,3 @@ resource_type    = "AppService"
 tier = "Devs"
 deployment = "Terraform"
 tags = "dev"
-
