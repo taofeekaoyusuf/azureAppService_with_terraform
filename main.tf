@@ -34,7 +34,7 @@ module "app_service" {
   location = "${var.location}"
   application_type = "${var.application_type}"
   resource_type = "${var.resource_type}"
-  resource_group = "${modules.resource_group.resource_group}"
+  resource_group = "${terraform.backend.azurerm.resource_group_name}"
   tags = "${var.tags}"
 }
 
