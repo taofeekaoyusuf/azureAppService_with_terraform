@@ -18,4 +18,7 @@ deployment = "Terraform"
 tier = "Dev"
 deployment = "Terraform"
 tags = "dev"
+<<<<<<< HEAD
+>>>>>>> efb961f833f996f059164a1009a5bab89e01e62a
+=======
 >>>>>>> efb961f833f996f059164a1009a5bab89e01e62a
