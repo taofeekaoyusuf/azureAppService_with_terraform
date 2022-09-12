@@ -10,7 +10,7 @@ terraform {
   backend "azurerm" {
     resource_group_name  = "Azuredevops"
     storage_account_name = ""
-    container_name       = "store01"
+    container_name       = "Azuredevops"
     key                  = "terraform.Azuredevops"
     access_key           = ""
   }
