@@ -11,7 +11,7 @@ terraform {
     resource_group_name  = "Azuredevops"
     storage_account_name = "azuredevops19438"
     container_name       = "azuredevops-container"
-    key                  = "terraform.Azuredevops"
+    key                  = "prod.terraform.azuredevops-container"
   }
 }
 
