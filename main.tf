@@ -35,7 +35,7 @@ module "app_service" {
   location = "${var.location}"
   application_type = "${var.application_type}"
   resource_type = "${var.resource_type}"
-  resource_group = "${module.resource_group.name}"
+  resource_group = "${module.resource_group.resource_group_name}"
   tags = "${var.tags}"
 }
 
