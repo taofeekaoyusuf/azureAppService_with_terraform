@@ -6,7 +6,7 @@ echo "\n*****### TERRAFORM APPSERVICE CREATION PROJECT: Deploying AppService wit
 sleep 2
 
 ### === VARIABLE DEFINITION AND ASSIGNMENT === ###
-
+echo "\n"
 echo "\n***### Initial Variable Definition ###***\n"
 sleep 2
 # Variable Definition
@@ -15,7 +15,7 @@ STORAGE_ACCOUNT_NAME="azuredevops$RANDOM" #"Azuredevops$(get-random)"
 CONTAINER_NAME="azuredevops_container"
 echo "\n***### Variable definition and Assignment Completed!!! ###***\n"
 sleep 5
-
+echo "\n"
 
 echo "\n***### Resource Group Creation Phase ###***\n"
 sleep 2
