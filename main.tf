@@ -24,8 +24,7 @@ locals {
 
 module "resource_group" {
   source         = "./modules/resource_group"
-  resource_group = var.resource_group
-  resource_group_name  = "Azuredevops"
+  resource_group  = var.resource_group
   location       = var.location
 }
 
@@ -35,7 +34,7 @@ module "app_service" {
   location = "${var.location}"
   application_type = "${var.application_type}"
   resource_type = "${var.resource_type}"
-  resource_group = "${module.resource_group.resource_group_name}"
+  resource_group = "${module.resource_group}"
   tags = "${var.tags}"
 }
 
