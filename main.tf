@@ -5,21 +5,36 @@ provider "azurerm" {
   client_secret   = "${var.client_secret}"
   features {}
 }
+
 terraform {
   backend "azurerm" {
+    resource_group_name  = "Azuredevops"
     storage_account_name = ""
-    container_name       = ""
-    key                  = ""
+    container_name       = "store01"
+    key                  = "terraform.Azuredevops"
     access_key           = ""
   }
 }
+
+locals {
+  tags = {
+    tier = "${var.tier}"
+    deployment = "${var.deployment}"
+  }
+}
+
 module "resource_group" {
-  source               = "../../modules/resource_group"
+  source               = "./modules/resource_group"
   resource_group       = "${var.resource_group}"
   location             = "${var.location}"
 }
 
 # Reference the AppService Module here.
-module "appservice" {
-  
+module "app_service" {
+  source = "./modules/appservice"
+  location = "${var.location}"
+  application_type = "${var.application_type}"
+  resource_type = "${var.resource_type}"
+  resource_group = "${modules.resource_group.resource_group_name}"
+  tags = "${var.tags}"
 }
