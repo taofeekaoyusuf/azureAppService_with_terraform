@@ -23,6 +23,7 @@ locals {
 }
 
 module "resource_group" {
+  name  = "Azuredevops"
   source         = "./modules/resource_group"
   resource_group = var.resource_group
   location       = var.location
@@ -34,7 +35,7 @@ module "app_service" {
   location = "${var.location}"
   application_type = "${var.application_type}"
   resource_type = "${var.resource_type}"
-  resource_group = "${terraform.workspace.azurerm.resource_group_name}"
+  resource_group = "${module.resource_group.name}"
   tags = "${var.tags}"
 }
 
