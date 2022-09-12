@@ -42,7 +42,7 @@ echo "\n***### Storage Access Key Getting and Storing Phase ###***\n"
 sleep 2
 # Get the storage access key and store it as an environment variable
 ACCOUNT_KEY=$(az storage account keys list --resource-group $RESOURCE_GROUP_NAME --account-name $STORAGE_ACCOUNT_NAME --query '[0].value' -o tsv) 
-$env:ARM_ACCESS_KEY=$ACCOUNT_KEY
+export ARM_ACCESS_KEY=$ACCOUNT_KEY
 echo "\n***### Storage Access Key Getting and Storing Phase Completed!!! ###***\n"
 sleep 5
 
