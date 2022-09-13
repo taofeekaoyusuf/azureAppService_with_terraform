@@ -36,6 +36,7 @@ module "app_service" {
   resource_type         = "AppService"
   resource_group        = module.resource_group.resource_group_name
   resource_group_name   = "${module.resource_group.resource_group_name}"
+  rg =                  = "Azuredevops"
   # id                  = data.azurerm_resource_group.rg.id
   tags                  = local.tags
 }
