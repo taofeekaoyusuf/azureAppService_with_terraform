@@ -4,5 +4,5 @@
 # }
 
 data "azurerm_resource_group" "rg"{
-  name = azurerm_resource_group.rg.name
+  name = data.azurerm_resource_group.rg.name
 }
