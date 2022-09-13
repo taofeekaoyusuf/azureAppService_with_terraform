@@ -38,7 +38,7 @@ module "app_service" {
   location         = var.location
   application_type = var.application_type
   resource_type    = "AppService"
-  resource_group   = module.resource_group
+  resource_group   = data.azurerm_resource_group.rg.name
   tags             = local.tags
 }
 
