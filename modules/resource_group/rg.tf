@@ -4,6 +4,6 @@ resource "azurerm_resource_group" "rg" {
 }
 
 data "azurerm_resource_group" "rg" {
-  name = var.resource_group
+  name = module.azurerm_resource_group.rg.name
   location = var.location
 }
