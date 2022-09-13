@@ -1,7 +1,7 @@
 resource "azurerm_app_service_plan" "test" {
   name                = "${var.application_type}-${var.resource_type}"
   location            = "${var.location}"
-  resource_group      = "${var.resource_group}"
+  resource_group      = "Azuredevops"
 
   sku {
     tier = "Free"
