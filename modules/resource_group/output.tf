@@ -10,6 +10,6 @@ output "location" {
   value = data.azurerm_resource_group.rg.location
 }
 
-output "id" {
-  value = data.azurerm_resource_group.rg.id
-}
+# output "id" {
+#   value = data.azurerm_resource_group.rg.id
+# }
