@@ -38,4 +38,3 @@ module "app_service" {
   tags             = "${local.tags}"
 }
 
-
