@@ -5,6 +5,9 @@ variable "location" {}
 variable "resource_group" {}
 # variable "id" {}
 variable "resource_group_name" {}
+variable "rg" {
+  default = "Azuredevops"
+}
 
 # Tagss
 variable "tags" {
