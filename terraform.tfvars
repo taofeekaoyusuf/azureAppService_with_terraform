@@ -11,6 +11,6 @@ application_type = "myAppService" # This name has to be globally unique.
 resource_type    = "AppService"
 
 # Tags
-tier = "Test"
+tier       = "Test"
 deployment = "Terraform"
 
