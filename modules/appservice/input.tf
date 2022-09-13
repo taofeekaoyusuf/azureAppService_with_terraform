@@ -5,6 +5,4 @@ variable "location" {}
 variable "resource_group" {}
 
 # Tags
-variable "tags" {
-  type = map(string)
-}
+variable "tags" {}
