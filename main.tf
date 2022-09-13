@@ -37,4 +37,5 @@ module "app_service" {
   resource_group   = "${module.resource_group}"
   tags             = "${var.tags}"
 }
-
+  
+  
