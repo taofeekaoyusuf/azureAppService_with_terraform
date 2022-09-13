@@ -9,6 +9,7 @@ location         = "South Central US"
 resource_group   = "Azuredevops"
 application_type = "myAppService" # This name has to be globally unique.
 resource_type    = "AppService"
+resource_group_name = "Azuredevops"
 
 # Tags
 tier       = "Test"
