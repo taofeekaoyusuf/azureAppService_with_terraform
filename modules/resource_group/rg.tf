@@ -3,7 +3,7 @@ resource "azurerm_resource_group" "rg" {
   location = "${var.location}"
 }
 
-data "azurerm_resource_group" {
+data "azurerm_resource_group" "test"{
   name = module.azurerm_resource_group.rg.name
   location = var.location
 }
