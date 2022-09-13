@@ -5,4 +5,6 @@ variable "location" {}
 variable "resource_group" {}
 
 # Tags
-variable "tags" {}
+variable "tags" {
+  
+}
