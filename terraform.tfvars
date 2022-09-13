@@ -5,7 +5,7 @@ client_secret   = "0pO8Q~ui9acay0-GGT666bFCngzeHOvmk1gq3ba8"
 tenant_id       = "f958e84a-92b8-439f-a62d-4f45996b6d07"
 
 # Resource Group/Location0pO8Q~ui9acay0-GGT666bFCngzeHOvmk1gq3ba8
-location         = "East US"
+location         = "South Central US"
 resource_group   = "Azuredevops"
 application_type = "myAppService" # This name has to be globally unique.
 resource_type    = "AppService"
