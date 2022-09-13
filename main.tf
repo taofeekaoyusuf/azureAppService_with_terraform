@@ -30,12 +30,12 @@ module "resource_group" {
 
 # Reference the AppService Module here.
 module "app_service" {
-  source           = "./modules/appservice"
-  location         = var.location
-  application_type = var.application_type
-  resource_type    = "AppService"
-  resource_group   = module.resource_group.resource_group_name
+  source                = "./modules/appservice"
+  location              = var.location
+  application_type      = var.application_type
+  resource_type         = "AppService"
+  resource_group_name   = module.resource_group.resource_group_name
   # id               = data.azurerm_resource_group.rg.id
-  tags = local.tags
+  tags                  = local.tags
 }
 
