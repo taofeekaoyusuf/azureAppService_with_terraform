@@ -22,10 +22,6 @@ locals {
   }
 }
 
-data "azurerm_resource_group" "rg" {
-  name = var.resource_group
-}
-
 module "resource_group" {
   source         = "./modules/resource_group"
   resource_group = data.azurerm_resource_group.rg.name
