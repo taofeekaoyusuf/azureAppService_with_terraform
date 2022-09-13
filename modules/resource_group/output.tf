@@ -1,5 +1,5 @@
 output "resource_group_name" {
-  value = data.azurerm_resource_group.rg.name
+  value = var.resource_group
 }
 
 # output "resource_group" {
@@ -7,7 +7,7 @@ output "resource_group_name" {
 # }
 
 output "location" {
-  value = data.azurerm_resource_group.rg.location
+  value = var.location
 }
 
 # output "id" {
