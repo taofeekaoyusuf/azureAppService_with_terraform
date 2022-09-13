@@ -10,9 +10,7 @@ variable "resource_group" {}
 variable "application_type" {}
 variable "resource_type" {}
 variable "resource_group_name" {}
-variable "rg" {
-  default = "Azuredevops"
-}
+variable "rg" {}
 
 # Tags
 variable "tier" {}
