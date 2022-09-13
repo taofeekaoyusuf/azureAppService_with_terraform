@@ -24,7 +24,7 @@ locals {
 
 module "resource_group" {
   source         = "./modules/resource_group"
-  resource_group = data.azurerm_resource_group.rg.name
+  resource_group = azurerm_resource_group.rg.name
   location       = var.location
 }
 
