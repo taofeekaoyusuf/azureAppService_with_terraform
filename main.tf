@@ -9,7 +9,7 @@ provider "azurerm" {
 terraform {
   backend "azurerm" {
     resource_group_name  = "Azuredevops"
-    storage_account_name = "azuredevops2280"
+    storage_account_name = "azuredevops26268"
     container_name       = "azuredevops-container"
     key                  = "prod.terraform.azuredevops-container"
   }
