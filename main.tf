@@ -1,8 +1,8 @@
 provider "azurerm" {
-  tenant_id       = var.tenant_id
-  subscription_id = var.subscription_id
-  client_id       = var.client_id
-  client_secret   = var.client_secret
+  tenant_id       = "${var.tenant_id}"
+  subscription_id = "${var.subscription_id}"
+  client_id       = "${var.client_id}"
+  client_secret   = "${var.client_secret}"
   features {}
 }
 
@@ -23,18 +23,19 @@ locals {
 }
 
 module "resource_group" {
-  source         = "./modules/resource_group"
-  resource_group = var.resource_group
-  location       = var.location
+  source          = "./modules/resource_group"
+  resource_group  = "${var.resource_group}"
+  location        = "${var.location}"
 }
 
 # Reference the AppService Module here.
 module "app_service" {
   source           = "./modules/appservice"
-  location         = var.location
-  application_type = var.application_type
-  resource_type    = var.resource_type
-  resource_group   = module.resource_group
-  tags             = var.tags
+  location         = "${var.location}"
+  application_type = "${var.application_type}"
+  resource_type    = "${var.resource_type}"
+  resource_group   = "${module.resource_group}"
+  tags             = "${var.tags}"
 }
-
+  
+  
