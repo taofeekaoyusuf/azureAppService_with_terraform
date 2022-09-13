@@ -8,7 +8,7 @@ provider "azurerm" {
 
 terraform {
   backend "azurerm" {
-    resource_group_name  = "Azuredevops"
+    resource_group_name  = module.resource_group.resource_group_name
     storage_account_name = "azuredevops2280"
     container_name       = "azuredevops-container"
     key                  = "prod.terraform.azuredevops-container"
@@ -24,7 +24,7 @@ locals {
 
 module "resource_group" {
   source         = "./modules/resource_group"
-  resource_group = var.resource_group
+  resource_group = module.resource_group.resource_group_name
   location       = var.location
 }
 
