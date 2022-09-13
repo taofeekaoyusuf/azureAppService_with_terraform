@@ -37,7 +37,6 @@ module "app_service" {
   resource_group        = module.resource_group.resource_group_name
   resource_group_name   = "${module.resource_group.resource_group_name}"
   rg                    = var.resource_group
-  # id                  = data.azurerm_resource_group.rg.id
   tags                  = local.tags
 }
 
