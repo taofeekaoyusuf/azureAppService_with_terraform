@@ -9,8 +9,14 @@ variable "location" {}
 variable "resource_group" {}
 variable "application_type" {}
 variable "resource_type" {}
+variable "resource_group_name" {}
+variable "rg" {
+  default = "Azuredevops"
+}
 
 # Tags
 variable "tier" {}
 variable "deployment" {}
-variable "tags" {}
+variable "tags" {
+  default =  "Test"
+}
