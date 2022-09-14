@@ -1,10 +1,33 @@
+trigger:
+- main
+
+# TODO: Replace the agent pool name
+pool: myPoolAgent
+
+variables:
+  # TODO: Replace the service connection name
+  azureServiceConnectionId: 'myserviceconnectdfnt' #'9264ae45-f6c6-47e0-9199-fa1b3e14415e' #'myserviceconnectdfnt'
+  
+  # TODO: Replace 'mywebapp193576' with the existing Web App name
+  webAppName: 'myazurepipelinewebapp'
+
+  # Agent VM image name
+  vmImageName: 'ubuntu-latest'
+
+  appName: 'myazurepipelinewebapp'
+  deployToSlotOrASE: true
+  resourceGroupName: 'Azuredevops'
+  slotName: 'production'
+  package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+  runtimeStack: 'PYTHON|3.8'
+  startUpCommand: 'python app.py'
+
 name: Azure Pipelines
 stages:
   - stage: Build
     jobs:
       - job: Build
-        pool:
-          name: Hosted Ubuntu 1804
+        pool: myPoolAgent
         steps:
           - task: CmdLine@2
             displayName: Install Newman Runner
