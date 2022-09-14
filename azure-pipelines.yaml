@@ -35,7 +35,6 @@ stages:
           - task: Npm@1
             inputs:
               command: 'install'              
-              workingDir: 'starter-code/automatedtesting/postman'
           - task: CmdLine@2
             displayName: Install Newman Runner
             inputs:             
