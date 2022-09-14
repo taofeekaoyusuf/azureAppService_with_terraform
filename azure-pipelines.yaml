@@ -29,6 +29,10 @@ stages:
       - job: Build
         pool: myPoolAgent
         steps:
+          - task: Npm@1
+            inputs:
+              command: 'install'
+              workingDir: 'starter-code/automatedtesting/postman'
           - task: NodeTool@0
             inputs:
               versionSpec: '12.0.0'
