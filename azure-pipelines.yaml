@@ -29,18 +29,18 @@ stages:
       - job: Build
         pool: myPoolAgent
         steps:
-          - task: NodeTool@0
-            inputs:
-              versionSpec: "12.13.0"
-          - task: Npm@1
-            inputs:
-              command: "install"
+          # - task: NodeTool@0
+          #   inputs:
+          #     versionSpec: "12.13.0"
+          # - task: Npm@1
+          #   inputs:
+          #     command: "install"
           - task: CmdLine@2
             displayName: Install Newman Runner
             inputs:
               script: |
-                "sudo apt install npm=8.19.2"
-                "sudo npm install -g newman=5.0.0"
+                "sudo apt install npm"
+                "sudo npm install -g newman=4.6.1"
               workingDirectory: $(System.DefaultWorkingDirectory)
 
           - task: CmdLine@2
@@ -49,3 +49,4 @@ stages:
             inputs:
               script: "newman run StarterAPIs.json"
               workingDirectory: "starter-code/automatedtesting/postman"
+
