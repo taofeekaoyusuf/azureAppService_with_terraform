@@ -1,20 +1,20 @@
 name: Azure Pipelines
 stages:
-- stage: Build
-  jobs:
-  - job: Build
-    pool:
-      name: Hosted Ubuntu 1604
-    steps:
-    - task: CmdLine@2
-      displayName: DISPLAY NAME
-      continueOnError: true
-      inputs:
-        script: 'COMMAND StarterAPIs.json'
-        workingDirectory: 'starter-code/automatedtesting/postman'
-    - task: CmdLine@2
-      displayName: DISPLAY NAME
-      inputs:
-        script: 'COMMAND'
-        workingDirectory: DEFAULT WORKING DIRECTORY
-    
+  - stage: Build
+    jobs:
+      - job: Build
+        pool:
+          name: Hosted Ubuntu 1604
+        steps:
+          - task: CmdLine@2
+            displayName: Install Newman Runner
+            inputs:
+              script: "sudo npm install -g newman"
+              workingDirectory: $(System.DefaultWorkingDireactory)
+
+          - task: CmdLine@2
+            displayName: Run Newman Tests
+            continueOnError: true
+            inputs:
+              script: "newman run StarterAPIs.json"
+              workingDirectory: "starter-code/automatedtesting/postman"
