@@ -29,10 +29,12 @@ stages:
       - job: Build
         pool: myPoolAgent
         steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: '10.x'
           - task: CmdLine@2
             displayName: Install Newman Runner
-            inputs:  
-              use: node>=10            
+            inputs:             
               script: |
                 "sudo apt install python-pip -y" 
                 "sudo apt install npm -y"
