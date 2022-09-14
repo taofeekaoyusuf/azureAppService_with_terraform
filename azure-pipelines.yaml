@@ -34,12 +34,13 @@ stages:
               versionSpec: '12.13.0'
           - task: Npm@1
             inputs:
-              versionSpec: '8.19.2'
               command: 'install'              
           - task: CmdLine@2
             displayName: Install Newman Runner
             inputs:             
-              script: "sudo npm install -g newman"                
+              script: |
+                "sudo apt install npm=8.19.2"
+                "sudo npm install -g newman"                
               workingDirectory: $(System.DefaultWorkingDirectory)
 
           - task: CmdLine@2
