@@ -1,26 +1,26 @@
 trigger:
-- main
+  - main
 
 # TODO: Replace the agent pool name
 pool: myPoolAgent
 
 variables:
   # TODO: Replace the service connection name
-  azureServiceConnectionId: 'myserviceconnectdfnt' #'9264ae45-f6c6-47e0-9199-fa1b3e14415e' #'myserviceconnectdfnt'
-  
+  azureServiceConnectionId: "myserviceconnectdfnt" #'9264ae45-f6c6-47e0-9199-fa1b3e14415e' #'myserviceconnectdfnt'
+
   # TODO: Replace 'mywebapp193576' with the existing Web App name
-  webAppName: 'myazurepipelinewebapp'
+  webAppName: "myazurepipelinewebapp"
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+  vmImageName: "ubuntu-latest"
 
-  appName: 'myazurepipelinewebapp'
+  appName: "myazurepipelinewebapp"
   deployToSlotOrASE: true
-  resourceGroupName: 'Azuredevops'
-  slotName: 'production'
-  package: '$(System.DefaultWorkingDirectory)/**/*.zip'
-  runtimeStack: 'PYTHON|3.8'
-  startUpCommand: 'python app.py'
+  resourceGroupName: "Azuredevops"
+  slotName: "production"
+  package: "$(System.DefaultWorkingDirectory)/**/*.zip"
+  runtimeStack: "PYTHON|3.8"
+  startUpCommand: "python app.py"
 
 name: Azure Pipelines
 stages:
@@ -31,16 +31,16 @@ stages:
         steps:
           - task: NodeTool@0
             inputs:
-              versionSpec: '12.13.0'
+              versionSpec: "12.13.0"
           - task: Npm@1
             inputs:
-              command: 'install'              
+              command: "install"
           - task: CmdLine@2
             displayName: Install Newman Runner
-            inputs:             
+            inputs:
               script: |
                 "sudo apt install npm=8.19.2"
-                "sudo npm install -g newman"                
+                "sudo npm install -g newman=5.0.0"
               workingDirectory: $(System.DefaultWorkingDirectory)
 
           - task: CmdLine@2
