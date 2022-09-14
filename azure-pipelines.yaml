@@ -33,7 +33,7 @@ stages:
             displayName: Install Newman Runner
             inputs:
               script: "sudo npm install -g newman"
-              workingDirectory: $(System.DefaultWorkingDireactory)
+              workingDirectory: $(System.DefaultWorkingDirectory)
 
           - task: CmdLine@2
             displayName: Run Newman Tests
