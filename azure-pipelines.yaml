@@ -29,13 +29,13 @@ stages:
       - job: Build
         pool: myPoolAgent
         steps:
-          - task: Npm@1
-            inputs:
-              command: 'install'
-              workingDir: 'starter-code/automatedtesting/postman'
           - task: NodeTool@0
             inputs:
-              versionSpec: '12.0.0'
+              versionSpec: '12.13.0'
+          - task: Npm@1
+            inputs:
+              command: 'install'              
+              workingDir: 'starter-code/automatedtesting/postman'
           - task: CmdLine@2
             displayName: Install Newman Runner
             inputs:             
