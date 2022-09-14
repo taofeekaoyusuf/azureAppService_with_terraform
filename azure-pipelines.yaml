@@ -35,11 +35,7 @@ stages:
           - task: CmdLine@2
             displayName: Install Newman Runner
             inputs:             
-              script: |
-                "sudo apt install python-pip -y" 
-                "sudo apt install npm -y"
-                "sudo npm install -g newman"
-                
+              script: "sudo npm install -g newman"                
               workingDirectory: $(System.DefaultWorkingDirectory)
 
           - task: CmdLine@2
